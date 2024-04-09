@@ -19,17 +19,37 @@ export default Link.extend({
             href: {
                 default: null,
             },
+<<<<<<< HEAD
             internal_id: {
+=======
+            id: {
+                default: null,
+            },
+            suca: {
+>>>>>>> 6289081 (feat: customizzazione di scribble)
                 default: null,
             },
             target: {
                 default: this.options.HTMLAttributes.target,
             },
+<<<<<<< HEAD
             title: {
+=======
+            hreflang: {
+>>>>>>> 6289081 (feat: customizzazione di scribble)
                 default: null,
             },
             rel: {
                 default: null,
+<<<<<<< HEAD
+=======
+            },
+            referrerpolicy: {
+                default: null,
+            },
+            class: {
+                default: null,
+>>>>>>> 6289081 (feat: customizzazione di scribble)
             }
         }
     },
