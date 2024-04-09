@@ -5,16 +5,23 @@ use Awcodes\Scribble\ScribbleTool;
 use Awcodes\Scribble\Enums\ToolType;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bdae654 (feat: customizzazione di scribble)
 use Awcodes\Scribble\Modals\NoticeForm;
 use Closure;
 =======
 use Closure;
 use FilamentMisc\Modals\NoticeForm;
+<<<<<<< HEAD
 >>>>>>> 6289081 (feat: customizzazione di scribble)
 =======
 use Awcodes\Scribble\Modals\NoticeForm;
 use Closure;
 >>>>>>> cf8a066 (refacot: some refactoring)
+=======
+>>>>>>> ec44a0e (feat: customizzazione di scribble)
+>>>>>>> bdae654 (feat: customizzazione di scribble)
 
 class Notice extends ScribbleTool
 {
