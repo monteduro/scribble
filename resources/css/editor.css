@@ -381,50 +381,47 @@
 .custom-editor .scribble-wrapper :where(blockquote p:first-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
     content:''
 }
-.fi-panel-admin .tippy-box[data-theme*="scribble-"] {
+.tippy-box[data-theme*="scribble-"] {
     @apply bg-gray-50 text-gray-900 dark:bg-gray-800 shadow-[0_0px_20px_0px_rgba(0,0,0,0.3)] dark:shadow-[0_0px_20px_0px_rgba(0,0,0,0.7)];
 }
-.fi-panel-admin .scribble-suggestions,
-.fi-panel-admin .scribble-merge-tags {
+.scribble-suggestions,
+.scribble-merge-tags {
     @apply w-[300px] overflow-y-auto text-xs rounded-lg shadow-none ring-0 transition dark:ring-white/10;
 }
-.fi-panel-admin .scribble-suggestions button:hover,
-.fi-panel-admin .scribble-merge-tags button:hover,
-.fi-panel-admin .scribble-suggestions button.active-option,
-.fi-panel-admin .scribble-merge-tags button.active-option {
+.scribble-suggestions button:hover,
+.scribble-merge-tags button:hover,
+.scribble-suggestions button.active-option,
+.scribble-merge-tags button.active-option {
     @apply bg-gray-200/60 dark:bg-gray-700/50
 }
-.fi-panel-admin .scribble-suggestions button .text,
-.fi-panel-admin .scribble-merge-tags button .text {
+.scribble-suggestions button .text
+.scribble-merge-tags button .text {
     @apply text-gray-600 font-semibold text-sm dark:text-gray-200
 }
-.fi-panel-admin .scribble-suggestions button .text .description,
-.fi-panel-admin .scribble-merge-tags button .text .description {
+.scribble-suggestions button .text .description,
+.scribble-merge-tags button .text .description {
     @apply font-normal text-gray-400 dark:text-gray-400
 }
-.fi-panel-admin .scribble-suggestions button .icon,
-.fi-panel-admin .scribble-merge-tags button .icon {
+.scribble-suggestions button .icon,
+.scribble-merge-tags button .icon {
     @apply ring-1 p-2 ring-gray-200 bg-white dark:ring-gray-800 text-gray-600 rounded-sm
 }
-.fi-panel-admin .tippy-box[data-theme*="scribble-"] .tippy-arrow {
+.tippy-box[data-theme*="scribble-"] .tippy-arrow {
     @apply text-gray-50 dark:text-gray-800
 }
-.fi-panel-admin .scribble-bubble-menu .divider {
+.scribble-bubble-menu .divider {
     @apply border-gray-200 dark:border-gray-700 m-0
 }
-.fi-panel-admin .scribble-bubble-menu button {
+.scribble-bubble-menu button {
     @apply text-gray-700 p-2 dark:text-gray-200 ring-0
 }
-.fi-panel-admin .scribble-bubble-menu .link-preview {
+.scribble-bubble-menu .link-preview {
     @apply p-2 px-4 text-gray-50 dark:text-gray-200
 }
-.fi-panel-admin .tippy-box[data-theme="scribble-bubble"] .tippy-content {
+.tippy-box[data-theme="scribble-bubble"] .tippy-content {
     @apply p-0
 }
-.fi-panel-admin .scribble-bubble-menu button.active,
-.fi-panel-admin .scribble-bubble-menu button:hover{
+.scribble-bubble-menu button.active,
+.scribble-bubble-menu button:hover{
     @apply bg-gray-200/60 dark:bg-gray-700/50 !text-gray-700 dark:!text-gray-100 ring-0 font-bold
-}
-.fi-panel-admin .scribble-bubble-menu button.active {
-    @apply !text-primary-500 dark:!text-primary-500
 }

@@ -3,8 +3,8 @@ namespace Awcodes\Scribble\Tools;
 
 use Awcodes\Scribble\ScribbleTool;
 use Awcodes\Scribble\Enums\ToolType;
+use Awcodes\Scribble\Modals\NoticeForm;
 use Closure;
-use FilamentMisc\Modals\NoticeForm;
 
 class Notice extends ScribbleTool
 {
