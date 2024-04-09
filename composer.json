@@ -1,21 +1,21 @@
 {
-    "name": "awcodes/scribble",
+    "name": "monteduro/scribble",
     "description": "A Rich Text Editor plugin for Filament Forms.",
     "keywords": [
-        "awcodes",
+        "monteduro",
         "laravel",
         "scribble"
     ],
-    "homepage": "https://github.com/awcodes/scribble",
+    "homepage": "https://github.com/monteduro/scribble",
     "support": {
-        "issues": "https://github.com/awcodes/scribble/issues",
-        "source": "https://github.com/awcodes/scribble"
+        "issues": "https://github.com/monteduro/scribble/issues",
+        "source": "https://github.com/monteduro/scribble"
     },
     "license": "MIT",
     "authors": [
         {
             "name": "Adam Weston",
-            "email": "awcodes1@gmail.com",
+            "email": "monteduro1@gmail.com",
             "role": "Developer"
         }
     ],
@@ -37,13 +37,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Awcodes\\Scribble\\": "src/"
+            "monteduro\\Scribble\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Awcodes\\Scribble\\Tests\\": "tests/src/",
-            "Awcodes\\Scribble\\Tests\\Database\\Factories\\": "tests/database/factories/"
+            "monteduro\\Scribble\\Tests\\": "tests/src/",
+            "monteduro\\Scribble\\Tests\\Database\\Factories\\": "tests/database/factories/"
         }
     },
     "scripts": {
@@ -62,7 +62,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Awcodes\\Scribble\\ScribbleServiceProvider"
+                "monteduro\\Scribble\\ScribbleServiceProvider"
             ],
             "aliases": {
                 "ScribbleConverter": "Converter"
