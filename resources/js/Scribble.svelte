@@ -10,7 +10,6 @@
     import DetailsSummary from './extensions/Details/DetailsSummary.js'
     import DetailsContent from './extensions/Details/DetailsContent.js'
     import IdExtension from './extensions/IdExtension.js'
-    import LinkExtension from './extensions/LinkExtension.js'
     import MediaExtension from './extensions/MediaExtension.js'
     import MergeTag from './extensions/MergeTag.js'
     import MergeTagsExtension from './extensions/MergeTagsExtension.js'
@@ -28,6 +27,8 @@
     import Controls from './components/Controls.svelte'
     import BubbleMenu from './components/BubbleMenu.svelte'
     import Toolbar from './components/Toolbar.svelte'
+    import {Highlight} from "@tiptap/extension-highlight";
+    import LinkCustom from "./extensions/LinkCustom.js";
 
     let editor;
     let element;
@@ -51,9 +52,10 @@
             StarterKit,
             ClassExtension,
             CommandsExtension,
-            LinkExtension,
             IdExtension,
             Grid,
+            LinkCustom,
+            Highlight,
             GridColumn,
             Details,
             DetailsContent,

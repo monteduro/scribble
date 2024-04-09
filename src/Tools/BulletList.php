@@ -3,10 +3,14 @@
 namespace Awcodes\Scribble\Tools;
 
 use Awcodes\Scribble\ScribbleTool;
+use Closure;
 use Tiptap\Nodes\BulletList as BulletListExtension;
 
 class BulletList extends ScribbleTool
 {
+
+    protected string | Closure | null $description = 'Elenco puntato';
+
     protected function setUp(): void
     {
         $this

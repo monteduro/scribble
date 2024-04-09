@@ -3,10 +3,14 @@
 namespace Awcodes\Scribble\Tools;
 
 use Awcodes\Scribble\ScribbleTool;
+use Closure;
 use Tiptap\Nodes\OrderedList as OrderedListExtension;
 
 class OrderedList extends ScribbleTool
 {
+
+    protected string | Closure | null $description = 'Elenco numerico';
+
     protected function setUp(): void
     {
         $this

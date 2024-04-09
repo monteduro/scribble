@@ -7,9 +7,13 @@ use Awcodes\Scribble\Livewire\GridModal;
 use Awcodes\Scribble\ScribbleTool;
 use Awcodes\Scribble\Tiptap\Nodes\Grid as GridExtension;
 use Awcodes\Scribble\Tiptap\Nodes\GridColumn as GridColumnExtension;
+use Closure;
 
 class Grid extends ScribbleTool
 {
+
+    protected string | Closure | null $description = 'Crea un layout a griglia';
+
     protected function setUp(): void
     {
         $this

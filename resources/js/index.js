@@ -8,7 +8,7 @@ export default function scribble(bubbleTools, suggestionTools, toolbarTools, mer
         mergeTags,
         state,
         statePath,
-        placeholder: placeholder ?? "press '/' for blocks",
+        placeholder: placeholder ?? "digita '/' per aggiungere un blocco",
         fullscreen: false,
         updatedFromEditor: false,
         isFocused: false,

@@ -8,6 +8,7 @@ use Awcodes\Scribble\Concerns\HasMergeTags;
 use Awcodes\Scribble\Concerns\HasProfiles;
 use Awcodes\Scribble\Concerns\HasSuggestionTools;
 use Awcodes\Scribble\Concerns\HasToolbarTools;
+use Awcodes\Scribble\Profiles\MonteProfile;
 use Awcodes\Scribble\Utils\Converter;
 use Filament\Forms\Components\Field;
 use Filament\Support\Concerns\HasPlaceholder;
@@ -44,5 +45,8 @@ class ScribbleEditor extends Field
 
             return $state;
         });
+
+        $this->profile(MonteProfile::class);
+
     }
 }

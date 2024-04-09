@@ -3,10 +3,14 @@
 namespace Awcodes\Scribble\Tools;
 
 use Awcodes\Scribble\ScribbleTool;
+use Closure;
 use Tiptap\Nodes\Heading as HeadingExtension;
 
 class HeadingOne extends ScribbleTool
 {
+
+    protected string | Closure | null $description = 'Intestazione di primo livello';
+
     protected function setUp(): void
     {
         $this

@@ -3,10 +3,14 @@
 namespace Awcodes\Scribble\Tools;
 
 use Awcodes\Scribble\ScribbleTool;
+use Closure;
 use Tiptap\Nodes\Blockquote as BlockquoteExtension;
 
 class Blockquote extends ScribbleTool
 {
+
+    protected string | Closure | null $description = 'Blocco per citazione';
+
     protected function setUp(): void
     {
         $this

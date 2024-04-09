@@ -76,6 +76,8 @@ class ScribbleManager extends Component
             Tools\Subscript::make(),
             Tools\Superscript::make(),
             Tools\Underline::make(),
+            Tools\Notice::make(),
+            Tools\Highlight::make(),
         ];
     }
 }
