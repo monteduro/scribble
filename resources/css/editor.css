@@ -155,7 +155,7 @@
                         z-index: 1;
 
                         .scribble-block-action {
-                            @apply block rounded p-1 text-white/50 transition-colors hover:text-primary-500 drop-shadow-lg;
+                            @apply block rounded p-1 text-white transition-opacity opacity-50 hover:opacity-100 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)];
 
                             svg {
                                 @apply w-5 h-5;
