@@ -33,6 +33,7 @@ class MonteProfile extends ScribbleProfile
     public static function suggestionTools(): array
     {
         return app(ScribbleManager::class)->getTools([
+            'media-library',
             'notice',
             'heading-one',
             'heading-three',

@@ -110,7 +110,7 @@
 
                 &.ProseMirror-focused {
                     .ProseMirror-selectednode {
-                        @apply outline-offset-2 outline outline-1 outline-gray-900/50 dark:outline-white/80;
+                        @apply outline-offset-2 outline outline-1 outline-gray-900/50 dark:outline-white/30;
                     }
 
                     .ProseMirror-gapcursor:after {
@@ -127,7 +127,7 @@
                 }
 
                 .scribble-block {
-                    @apply relative bg-gray-900/5 dark:bg-white/5;
+                    @apply relative bg-gray-900/5 dark:bg-white/5 rounded-lg overflow-hidden;
                     min-height: 2rem;
 
                     .loading-block {
@@ -151,11 +151,11 @@
                     }
 
                     .scribble-block-actions {
-                        @apply transition opacity-0 absolute top-0 right-0 p-1 flex items-center bg-gray-100/50 pointer-events-none;
+                        @apply transition opacity-0 absolute top-0 right-0 p-2 flex items-center pointer-events-none;
                         z-index: 1;
 
                         .scribble-block-action {
-                            @apply text-gray-600 block rounded p-1 hover:text-primary-500;
+                            @apply block rounded p-1 text-white/50 transition-colors hover:text-primary-500 drop-shadow-lg;
 
                             svg {
                                 @apply w-5 h-5;
@@ -436,6 +436,6 @@
 .scribble-button {
     @apply focus:ring-0;
 }
-.scribble-block-content  {
-    @apply rounded-lg overflow-hidden
+.prosemirror-dropcursor-block {
+    @apply !bg-transparent border-b border-dashed dark:border-white/40 border-black/30
 }

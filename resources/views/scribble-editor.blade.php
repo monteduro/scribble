@@ -33,7 +33,7 @@
             'invalid' => $errors->has($statePath),
         ])
     ></div>
-    <div id="scribble-editor-loading-indicator" class="transition-all absolute top-0 w-full h-full bg-white/80 dark:bg-gray-900/90 flex z-10 justify-center items-center hidden">
+    <div id="scribble-editor-loading-indicator" class="absolute top-0 w-full h-full bg-white/80 dark:bg-gray-900/90 flex z-10 justify-center items-center hidden">
         <x-filament::loading-indicator class="h-8 w-8 text-primary-500 loader" />
     </div>
 </x-dynamic-component>

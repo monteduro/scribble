@@ -7,6 +7,8 @@ use App\Models\Movie;
 use App\Models\Podcast;
 use App\Models\TVShow;
 use Filament\Forms;
+use Filament\Forms\Components\Actions;
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Hidden;
@@ -91,6 +93,15 @@ class LinkCustomModal extends ScribbleModal
                                 ->label('Impesici ai motori di ricerca di seguire questo link'),
                             TextInput::make('title')
                                 ->label('Titolo')
+                        ]),
+                        Actions::make([
+                            Action::make('resetStars')
+                                ->icon('heroicon-m-x-mark')
+                                ->color('danger')
+                                ->requiresConfirmation()
+                                ->action(function(){
+                                  \Log::info('test');
+                                })
                         ])
 
                 ]),
