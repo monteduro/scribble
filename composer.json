@@ -1,15 +1,15 @@
 {
-    "name": "awcodes/scribble",
+    "name": "monteduro/scribble",
     "description": "A Rich Text Editor plugin for Filament Forms.",
     "keywords": [
         "awcodes",
         "laravel",
         "scribble"
     ],
-    "homepage": "https://github.com/awcodes/scribble",
+    "homepage": "https://github.com/monteduro/scribble",
     "support": {
-        "issues": "https://github.com/awcodes/scribble/issues",
-        "source": "https://github.com/awcodes/scribble"
+        "issues": "https://github.com/monteduro/scribble/issues",
+        "source": "https://github.com/monteduro/scribble"
     },
     "license": "MIT",
     "authors": [
