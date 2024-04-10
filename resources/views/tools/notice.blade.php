@@ -1,6 +1,6 @@
 <div
     @class([
-      'border-l-4 p-4 flex items-center gap-3 not-prose ',
+      'border-l-4 p-4 flex items-center gap-3 not-prose',
       match($color) {
         'success' => 'bg-success-200 text-success-900 border-success-600',
         'danger' => 'bg-danger-200 text-danger-900 border-danger-600',
