@@ -1,3 +1,5 @@
+import { hideLoadingIndicator } from "./utils.js"
+
 window.scribbleModal = () => {
     return {
         show: false,
@@ -64,6 +66,9 @@ window.scribbleModal = () => {
             } else {
                 this.setShowPropertyTo(false)
             }
+
+            hideLoadingIndicator()
+
         },
         setActiveModalComponent(id, skip = false) {
             this.setShowPropertyTo(true)
@@ -137,6 +142,7 @@ window.scribbleModal = () => {
             this.show = show
 
             if (show) {
+                hideLoadingIndicator(true)
                 document.body.classList.add('overflow-y-hidden')
             } else {
                 document.body.classList.remove('overflow-y-hidden')

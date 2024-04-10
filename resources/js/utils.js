@@ -7,7 +7,16 @@ export const uuid = () => {
 }
 
 export const openScribbleModal = (component, args) => {
+    document.getElementById('scribble-editor-loading-indicator').classList.remove('hidden');
+    document.querySelector('#scribble-editor-loading-indicator .loader').classList.remove('hidden');
     window.Livewire.dispatch('openScribbleModal', { component: component, arguments: args })
+}
+
+export const hideLoadingIndicator = (hide_loader = false) => {
+    if ( hide_loader )
+        document.querySelector('#scribble-editor-loading-indicator .loader').classList.add('hidden');
+    else
+        document.getElementById('scribble-editor-loading-indicator').classList.add('hidden');
 }
 
 export const commandRunner = (editor, commands, args = []) => {

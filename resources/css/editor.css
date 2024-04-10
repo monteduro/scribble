@@ -436,3 +436,6 @@
 .scribble-button {
     @apply focus:ring-0;
 }
+.scribble-block-content  {
+    @apply rounded-lg overflow-hidden
+}

@@ -26,7 +26,7 @@
         <div
             x-show="show && showActiveComponent"
             x-on:click="closeModalOnClickAway()"
-            class="absolute inset-0 z-0 transition inset-0 bg-gray-950/50 dark:bg-gray-950/75"
+            class="absolute inset-0 z-0 transition bg-gray-950/50 dark:bg-gray-950/75"
             x-transition:enter="ease-out duration-300"
             x-transition:enter-start="opacity-0"
             x-transition:enter-end="opacity-100"
