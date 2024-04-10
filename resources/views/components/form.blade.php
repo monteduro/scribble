@@ -16,5 +16,6 @@
         <x-filament::button color="gray" wire:click="closeScribbleModal">
             {{ trans('scribble::modal.cancel') }}
         </x-filament::button>
+        <x-filament::loading-indicator wire:loading class="h-5 w-5" />
     </x-scribble::modals.footer>
 </form>

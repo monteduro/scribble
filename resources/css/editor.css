@@ -421,7 +421,7 @@
     @apply text-gray-700 p-2 dark:text-gray-200 ring-0
 }
 .scribble-bubble-menu .link-preview {
-    @apply p-2 px-4 text-gray-50 dark:text-gray-200
+    @apply p-2 px-4 text-gray-500 dark:text-gray-200
 }
 .tippy-box[data-theme="scribble-bubble"] .tippy-content {
     @apply p-0

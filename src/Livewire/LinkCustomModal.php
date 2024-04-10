@@ -4,16 +4,21 @@ namespace Awcodes\Scribble\Livewire;
 
 use App\Models\Content;
 use App\Models\Movie;
+use App\Models\Podcast;
+use App\Models\TVShow;
 use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Group;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\MorphToSelect;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Support\Enums\MaxWidth;
 
 class LinkCustomModal extends ScribbleModal
@@ -28,16 +33,53 @@ class LinkCustomModal extends ScribbleModal
             Forms\Components\Grid::make()
                 ->columns(1)
                 ->schema([
-                    Select::make('internal_id')
-                        ->label('')
-                        ->placeholder('Cerca e linka un contenuto del sito...')
-                        ->getSearchResultsUsing(fn (string $search): array => Content::where('title', 'like', "%{$search}%")->limit(3)->pluck('title', 'id')->toArray())
-                        ->searchable(),
-                    TextInput::make('href')
-                        ->label('')
-                        ->placeholder('Inserisci url esterna...')
-                        ->requiredWithout('internal_id')
-                        ->validationAttribute('URL'),
+                    Tabs::make('Link')
+                        ->activeTab(fn(Get $get) => $get('href') != '' ? 2 : 1)
+                        ->tabs([
+                            Tab::make('Link interno')
+                                ->schema([
+                                    Select::make('model_type')
+                                        ->reactive()
+                                        ->placeholder('Seleziona il tipo di contenuto che vuoi linkare...')
+                                        ->afterStateUpdated(function (Set $set) {
+                                            $set('model_id', null);
+                                        })
+                                        ->options([
+                                            Content::class => 'Contenuto',
+                                            Movie::class => 'Film',
+                                            TVShow::class => 'TV Show',
+                                            Podcast::class => 'Podcast'
+                                        ]),
+                                    Select::make('model_id')
+                                        ->label('')
+                                        ->hidden(fn(Get $get) => !$get('model_type'))
+                                        ->reactive()
+                                        ->afterStateUpdated(function (Set $set, Get $get, $state) {
+                                            if ( $state ) {
+                                                $set('title', $get('model_type')::where('id', $state)->first()->title);
+                                                $set('href', null);
+                                            }
+                                        })
+                                        ->placeholder('Cerca e linka un contenuto del sito...')
+                                        ->getSearchResultsUsing(fn (string $search, Get $get): array => $get('model_type')::where('title', 'like', "%{$search}%")->limit(3)->pluck('title', 'id')->toArray())
+                                        ->searchable(),
+                                ]),
+                            Tab::make('Link esterno')
+                                ->schema([
+                                    TextInput::make('href')
+                                        ->label('')
+                                        ->afterStateUpdated(function (Set $set, $state) {
+                                            if ( $state ) {
+                                                $set('title', '');
+                                                $set('model_id', null);
+                                            }
+                                        })
+                                        ->reactive()
+                                        ->placeholder('Inserisci url esterna...')
+                                        ->requiredWithout('model_id')
+                                        ->url(),
+                                ])
+                    ]),
                     Toggle::make('target')
                         ->label('Apri in una nuova finestra'),
                     Section::make('Attributi aggiuntivi')

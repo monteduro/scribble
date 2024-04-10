@@ -32,6 +32,7 @@ class Modals extends Component
      */
     public function openScribbleModal($component, $arguments = [], $modalAttributes = []): void
     {
+        \Log::info('suca');
         $requiredInterface = \Awcodes\Scribble\Modals\Contracts\ModalComponent::class;
         $componentClass = app(ComponentRegistry::class)->getClass($component);
         $reflect = new ReflectionClass($componentClass);

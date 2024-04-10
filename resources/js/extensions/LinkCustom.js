@@ -19,7 +19,10 @@ export default Link.extend({
             href: {
                 default: null,
             },
-            internal_id: {
+            model_id: {
+                default: null,
+            },
+            model_type: {
                 default: null,
             },
             target: {
