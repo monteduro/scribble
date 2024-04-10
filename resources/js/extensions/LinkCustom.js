@@ -22,8 +22,11 @@ export default Link.extend({
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bdae654 (feat: customizzazione di scribble)
+=======
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
             internal_id: {
 =======
             id: {
@@ -37,12 +40,19 @@ export default Link.extend({
 >>>>>>> 0a677f3 (refactor: alcuni fix e personalizzazione dei link (parziale))
 =======
 >>>>>>> ec44a0e (feat: customizzazione di scribble)
+<<<<<<< HEAD
 >>>>>>> bdae654 (feat: customizzazione di scribble)
+=======
+=======
+            internal_id: {
+>>>>>>> ada292d (refactor: alcuni fix e personalizzazione dei link (parziale))
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
                 default: null,
             },
             target: {
                 default: this.options.HTMLAttributes.target,
             },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,11 +64,19 @@ export default Link.extend({
             title: {
 >>>>>>> 0a677f3 (refactor: alcuni fix e personalizzazione dei link (parziale))
 =======
+=======
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
             title: {
 =======
             hreflang: {
 >>>>>>> ec44a0e (feat: customizzazione di scribble)
+<<<<<<< HEAD
 >>>>>>> bdae654 (feat: customizzazione di scribble)
+=======
+=======
+            title: {
+>>>>>>> ada292d (refactor: alcuni fix e personalizzazione dei link (parziale))
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
                 default: null,
             },
             rel: {
@@ -66,8 +84,11 @@ export default Link.extend({
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bdae654 (feat: customizzazione di scribble)
+=======
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
 =======
             },
             referrerpolicy: {
@@ -81,7 +102,12 @@ export default Link.extend({
 >>>>>>> 0a677f3 (refactor: alcuni fix e personalizzazione dei link (parziale))
 =======
 >>>>>>> ec44a0e (feat: customizzazione di scribble)
+<<<<<<< HEAD
 >>>>>>> bdae654 (feat: customizzazione di scribble)
+=======
+=======
+>>>>>>> ada292d (refactor: alcuni fix e personalizzazione dei link (parziale))
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
             }
         }
     },

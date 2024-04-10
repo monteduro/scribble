@@ -376,8 +376,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bdae654 (feat: customizzazione di scribble)
+=======
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
     @apply p-4 px-6
 }
 .scribble-wrapper .scribble-editor-wrapper .scribble-controls {
@@ -443,6 +446,7 @@
 }
 =======
     padding: 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     @apply p-4 px-6
@@ -520,19 +524,29 @@
 }
 >>>>>>> 0a677f3 (refactor: alcuni fix e personalizzazione dei link (parziale))
 =======
+=======
+=======
+    @apply p-4 px-6
+>>>>>>> ada292d (refactor: alcuni fix e personalizzazione dei link (parziale))
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
 }
-.custom-editor .scribble-wrapper .scribble-editor-wrapper .scribble-controls {
-    display: none;
+.scribble-wrapper .scribble-editor-wrapper .scribble-controls {
+    @apply hidden
 }
-.custom-editor .scribble-wrapper :where(blockquote p:first-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
+.scribble-wrapper :where(blockquote p:first-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
     content:''
+}
+.scribble-wrapper {
+    h2, h3 {
+        @apply mt-4
+    }
 }
 .tippy-box[data-theme*="scribble-"] {
     @apply bg-gray-50 text-gray-900 dark:bg-gray-800 shadow-[0_0px_20px_0px_rgba(0,0,0,0.3)] dark:shadow-[0_0px_20px_0px_rgba(0,0,0,0.7)];
 }
 .scribble-suggestions,
 .scribble-merge-tags {
-    @apply w-[300px] overflow-y-auto text-xs rounded-lg shadow-none ring-0 transition dark:ring-white/10;
+    @apply w-[300px] max-h-72 overflow-y-auto text-xs rounded-lg shadow-none ring-0 transition dark:ring-white/10;
 }
 .scribble-suggestions button:hover,
 .scribble-merge-tags button:hover,
@@ -540,7 +554,7 @@
 .scribble-merge-tags button.active-option {
     @apply bg-gray-200/60 dark:bg-gray-700/50
 }
-.scribble-suggestions button .text
+.scribble-suggestions button .text,
 .scribble-merge-tags button .text {
     @apply text-gray-600 font-semibold text-sm dark:text-gray-200
 }
@@ -572,6 +586,7 @@
     @apply bg-gray-200/60 dark:bg-gray-700/50 !text-gray-700 dark:!text-gray-100 ring-0 font-bold
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .fi-panel-admin .scribble-bubble-menu button.active {
     @apply !text-primary-500 dark:!text-primary-500
 }
@@ -581,4 +596,15 @@
 =======
 =======
 >>>>>>> d87b3fd (refacot: some refactoring)
+<<<<<<< HEAD
 >>>>>>> 8ce1f90 (refacot: some refactoring)
+=======
+=======
+.scribble-bubble-menu button.active {
+    @apply !text-primary-500 dark:!text-primary-500
+}
+.scribble-button {
+    @apply focus:ring-0;
+}
+>>>>>>> ada292d (refactor: alcuni fix e personalizzazione dei link (parziale))
+>>>>>>> 5ef1b3b (refactor: alcuni fix e personalizzazione dei link (parziale))
