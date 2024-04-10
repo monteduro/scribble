@@ -5,8 +5,6 @@ use Awcodes\Scribble\Enums\SlideDirection;
 use Awcodes\Scribble\Livewire\ScribbleModal;
 use Awcodes\Scribble\Profiles\MinimalProfile;
 use Awcodes\Scribble\ScribbleEditor;
-use Filament\Forms\Components\Actions;
-use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Radio;
 
 class NoticeForm extends ScribbleModal
@@ -41,16 +39,6 @@ class NoticeForm extends ScribbleModal
             ScribbleEditor::make('body')
                 ->profile(MinimalProfile::class)
                 ->columnSpanFull(),
-            Actions::make([
-                Action::make('resetStars')
-                    ->icon('heroicon-m-x-mark')
-                    ->color('danger')
-                    ->requiresConfirmation()
-                    ->action(function(){
-                      \Log::info('test');
-                    })
-            ])
-
         ];
     }
 }

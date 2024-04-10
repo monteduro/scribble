@@ -2,7 +2,6 @@
 namespace Awcodes\Scribble\Modals;
 
 use AdvancedMediaHandler\Filament\Components\AdvancedMediaPicker;
-use AdvancedMediaHandler\Filament\Components\AdvancedMediaPicker2;
 use Awcodes\Scribble\Enums\SlideDirection;
 use Awcodes\Scribble\Livewire\ScribbleModal;
 use Filament\Support\Enums\MaxWidth;
@@ -14,9 +13,7 @@ class MediaLibraryForm extends ScribbleModal
     // this should match the identifier in the tool class
     public ?string $identifier = 'media-library';
 
-    public static ?SlideDirection $slideDirection = SlideDirection::Right;
-
-    public static ?MaxWidth $maxWidth = MaxWidth::SevenExtraLarge;
+    public static ?MaxWidth $maxWidth = MaxWidth::FiveExtraLarge;
 
     public function mount(): void
     {
@@ -29,8 +26,10 @@ class MediaLibraryForm extends ScribbleModal
     public function getFormFields(): array
     {
         return [
-            AdvancedMediaPicker2::make('media_ids')
+            AdvancedMediaPicker::make('media_ids')
+                ->label('')
                 ->multiple()
+                ->required(true)
                 ->collection('images')
         ];
     }
