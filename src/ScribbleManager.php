@@ -68,7 +68,7 @@ class ScribbleManager extends Component
             Tools\HeadingTwo::make(),
             Tools\HorizontalRule::make(),
             Tools\Italic::make(),
-            Tools\Link::make(),
+            Tools\LinkCustom::make(),
             Tools\Media::make(),
             Tools\OrderedList::make(),
             Tools\Paragraph::make(),

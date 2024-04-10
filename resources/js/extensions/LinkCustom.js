@@ -19,25 +19,16 @@ export default Link.extend({
             href: {
                 default: null,
             },
-            id: {
-                default: null,
-            },
-            suca: {
+            internal_id: {
                 default: null,
             },
             target: {
                 default: this.options.HTMLAttributes.target,
             },
-            hreflang: {
+            title: {
                 default: null,
             },
             rel: {
-                default: null,
-            },
-            referrerpolicy: {
-                default: null,
-            },
-            class: {
                 default: null,
             }
         }
