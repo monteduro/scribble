@@ -44,5 +44,8 @@
         "svelte": "^4.2.8",
         "svelte-tiptap": "^1.1.2",
         "tippy.js": "^6.3.7"
+    },
+    "dependencies": {
+        "@tiptap/extension-highlight": "^2.3.0"
     }
 }
