@@ -155,7 +155,7 @@
                         z-index: 1;
 
                         .scribble-block-action {
-                            @apply block rounded p-1 text-white transition-opacity opacity-50 hover:opacity-100 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)];
+                            @apply block rounded p-1 dark:text-white text-black transition-opacity opacity-50 hover:opacity-80 dark:drop-shadow-[0_0_8px_rgba(0,0,0,0.5)];
 
                             svg {
                                 @apply w-5 h-5;
@@ -375,6 +375,12 @@
 .custom-editor .scribble-wrapper .scribble-editor-wrapper .scribble-editor .tiptap {
     @apply p-4 px-6
 }
+.scribble-wrapper .scribble-editor-wrapper a {
+    @apply dark:text-primary-400 text-primary-600
+}
+.scribble-wrapper .scribble-editor-wrapper hr {
+    @apply my-3
+}
 .scribble-wrapper .scribble-editor-wrapper .scribble-controls {
     @apply hidden
 }
@@ -387,7 +393,7 @@
     }
 }
 .tippy-box[data-theme*="scribble-"] {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-800 shadow-[0_0px_20px_0px_rgba(0,0,0,0.3)] dark:shadow-[0_0px_20px_0px_rgba(0,0,0,0.7)];
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-800 shadow-[0_0px_20px_0px_rgba(0,0,0,0.3)] dark:shadow-[0_0px_20px_0px_rgba(0,0,0,0.4)];
 }
 .scribble-suggestions,
 .scribble-merge-tags {
@@ -438,4 +444,7 @@
 }
 .prosemirror-dropcursor-block {
     @apply !bg-transparent border-b border-dashed dark:border-white/40 border-black/30
+}
+.ProseMirror-gapcursor:after {
+    @apply dark:!border-white/50 !border-black/30
 }
