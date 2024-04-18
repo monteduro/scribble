@@ -2,15 +2,25 @@
 
 namespace Awcodes\Scribble;
 
+use Closure;
 use Filament\Support\Components\Component;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
 class ScribbleManager extends Component
 {
-    protected array | null $tools = null;
+    protected ?array $tools = null;
 
-    protected array | null $customTools = null;
+    protected ?array $customTools = null;
+
+    protected array | Closure | null $mergeTagsMap = null;
+
+    public function mergeTagsMap(array | Closure $mergeTagsMap): static
+    {
+        $this->mergeTagsMap = $mergeTagsMap;
+
+        return $this;
+    }
 
     public function registerTools(array $tools): static
     {
@@ -22,6 +32,7 @@ class ScribbleManager extends Component
     public function tools(array $tools): static
     {
         $this->tools = $tools;
+
         return $this;
     }
 
@@ -80,5 +91,10 @@ class ScribbleManager extends Component
             Tools\Highlight::make(),
             Tools\MediaLibrary::make()
         ];
+    }
+
+    public function getMergeTagsMap(): array
+    {
+        return $this->evaluate($this->mergeTagsMap) ?? [];
     }
 }

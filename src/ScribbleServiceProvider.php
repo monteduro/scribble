@@ -2,8 +2,8 @@
 
 namespace Awcodes\Scribble;
 
+use Awcodes\Scribble\Commands\MakeProfileCommand;
 use Awcodes\Scribble\Commands\MakeToolCommand;
-use Awcodes\Scribble\Commands\ScribbleCommand;
 use Awcodes\Scribble\Livewire\Renderer;
 use Awcodes\Scribble\Modals\Modals;
 use Awcodes\Scribble\Testing\TestsScribble;
@@ -74,7 +74,7 @@ class ScribbleServiceProvider extends PackageServiceProvider
 
             FilamentView::registerRenderHook(
                 name: 'panels::body.end',
-                hook: fn(): string => Blade::render('@livewire("scribble.modals")'),
+                hook: fn (): string => Blade::render('@livewire("scribble.modals")'),
             );
         }
 
@@ -108,8 +108,8 @@ class ScribbleServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            ScribbleCommand::class,
             MakeToolCommand::class,
+            MakeProfileCommand::class,
         ];
     }
 }
