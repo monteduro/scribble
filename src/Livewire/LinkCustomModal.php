@@ -94,16 +94,6 @@ class LinkCustomModal extends ScribbleModal
                             TextInput::make('title')
                                 ->label('Titolo')
                         ]),
-                        Actions::make([
-                            Action::make('resetStars')
-                                ->icon('heroicon-m-x-mark')
-                                ->color('danger')
-                                ->requiresConfirmation()
-                                ->action(function(){
-                                  \Log::info('test');
-                                })
-                        ])
-
                 ]),
         ];
     }

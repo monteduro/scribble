@@ -21,6 +21,7 @@ class MonteProfile extends ScribbleProfile
             'italic',
             'strike',
             'divider',
+            'blockquote',
             'bullet-list',
             'ordered-list',
             'divider',
