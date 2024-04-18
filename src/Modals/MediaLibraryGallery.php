@@ -2,16 +2,15 @@
 namespace Awcodes\Scribble\Modals;
 
 use AdvancedMediaHandler\Filament\Components\AdvancedMediaPicker;
-use Awcodes\Scribble\Enums\SlideDirection;
 use Awcodes\Scribble\Livewire\ScribbleModal;
 use Filament\Support\Enums\MaxWidth;
 
-class MediaLibraryForm extends ScribbleModal
+class MediaLibraryGallery extends ScribbleModal
 {
-    public ?string $header = 'Media Library';
+    public ?string $header = 'Gallery';
 
     // this should match the identifier in the tool class
-    public ?string $identifier = 'media-library';
+    public ?string $identifier = 'media-library-gallery';
 
     public static ?MaxWidth $maxWidth = MaxWidth::FiveExtraLarge;
 

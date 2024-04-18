@@ -33,6 +33,7 @@
         "@tiptap/extension-text": "^2.2.0",
         "@tiptap/extension-text-style": "^2.2.0",
         "@tiptap/extension-underline": "^2.2.0",
+        "@tiptap/extension-highlight": "^2.3.0",
         "@tiptap/html": "2.2.0",
         "@tiptap/pm": "^2.2.0",
         "@tiptap/starter-kit": "^2.2.0",
@@ -44,8 +45,5 @@
         "svelte": "^4.2.8",
         "svelte-tiptap": "^1.1.2",
         "tippy.js": "^6.3.7"
-    },
-    "dependencies": {
-        "@tiptap/extension-highlight": "^2.3.0"
     }
 }
