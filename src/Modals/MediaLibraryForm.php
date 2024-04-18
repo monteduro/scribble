@@ -17,7 +17,6 @@ class MediaLibraryForm extends ScribbleModal
 
     public function mount(): void
     {
-        \Log::info($this->data);
         $this->form->fill([
             'media_ids' => $this->data['media_ids'] ?? []
         ]);
