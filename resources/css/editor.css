@@ -411,10 +411,7 @@
     @apply dark:bg-gray-900 min-h-72
 }
 .custom-editor .scribble-wrapper .scribble-editor-wrapper .scribble-editor .tiptap {
-    @apply p-4
-}
-.custom-editor .scribble-wrapper .scribble-editor-wrapper .scribble-editor .tiptap > * {
-    @apply px-4
+    @apply p-4 px-6
 }
 .scribble-wrapper .scribble-editor-wrapper a {
     @apply dark:text-primary-400 text-primary-600
