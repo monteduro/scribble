@@ -21,6 +21,11 @@ class MediaLibraryGallery extends ScribbleModal
         ]);
     }
 
+    public static function closeModalOnEscape(): bool
+    {
+        return false;
+    }
+
     public function getFormFields(): array
     {
         return [
@@ -31,4 +36,5 @@ class MediaLibraryGallery extends ScribbleModal
                 ->collection('images')
         ];
     }
+
 }

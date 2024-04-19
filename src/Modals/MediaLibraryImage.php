@@ -27,6 +27,11 @@ class MediaLibraryImage extends ScribbleModal
         ]);
     }
 
+    public static function closeModalOnEscape(): bool
+    {
+        return false;
+    }
+
     public function getFormFields(): array
     {
         return [
