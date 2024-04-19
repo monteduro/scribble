@@ -1,11 +1,10 @@
 <script>
     import { NodeViewWrapper } from 'svelte-tiptap'
-    import { onMount, tick } from 'svelte'
-    import { openScribbleModal } from '../utils.js'
-    import BlockSettings from './BlockSettings.svelte'
+    import { onMount } from 'svelte'
     import DragHandle from './DragHandle.svelte'
-    import RemoveBlock from './RemoveBlock.svelte'
     import BlockActions from './BlockActions.svelte'
+    import tippy from 'tippy.js'
+    import OptionsMenu from '../components/OptionsMenu.svelte'
 
     export let editor;
     export let node;
@@ -15,17 +14,46 @@
     let view = null;
     $: wrapper = null;
 
-    const handleOpen = () => {
-        openScribbleModal(node.attrs.identifier, {
-            update: true,
-            statePath: editor.storage?.statePathExtension.statePath ?? null,
-            blockId: node.attrs.id,
-            data: node.attrs.values
-        })
-    }
+    let component;
+    let popupInstance;
 
-    const handleRemove = () => {
-        editor.commands.deleteSelection()
+    const handleMenuOpen = (event) => {
+        const clientRect = event.currentTarget.getBoundingClientRect();
+
+        // Inizializza prima il componente senza popupInstance
+        component = new OptionsMenu({
+            target: document.createElement('div'), // Crea un elemento div per montare il componente Svelte
+            props: {
+                node,
+                editor,
+                onClose: () => closeOptions()
+            }
+        });
+
+        popupInstance = tippy('body', {
+            content: component.$$.root,
+            getReferenceClientRect: () => clientRect,
+            allowHTML: true,
+            interactive: true,
+            trigger: 'manual',
+            placement: 'left',
+            showOnCreate: true,
+            hideOnClick: true,
+            theme: 'scribble-options',
+            arrow: true,
+            zIndex: 9999,
+            onHidden(instance) {
+                instance.destroy();
+            }
+        });
+    };
+
+    const closeOptions = (event) => {
+        if (Array.isArray(popupInstance)) {
+            popupInstance.forEach(instance => instance.hide());
+        } else {
+            popupInstance.hide();
+        }
     }
 
     $: getView = () => {
@@ -77,11 +105,7 @@
             {/if}
         </div>
         <BlockActions>
-            <DragHandle />
-            {#if node.attrs.type !== 'static'}
-            <BlockSettings {handleOpen} />
-            {/if}
-            <RemoveBlock {handleRemove} />
+            <DragHandle {handleMenuOpen} />
         </BlockActions>
     </div>
 </NodeViewWrapper>

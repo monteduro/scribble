@@ -114,10 +114,6 @@
                 }
 
                 &.ProseMirror-focused {
-                    .ProseMirror-selectednode {
-                        @apply outline-offset-2 outline outline-1 outline-gray-900/50 dark:outline-white/30;
-                    }
-
                     .ProseMirror-gapcursor:after {
                         @apply border-gray-900/50 dark:border-white/80;
                     }
@@ -132,7 +128,7 @@
                 }
 
                 .scribble-block {
-                    @apply relative bg-gray-900/5 dark:bg-white/5 rounded-lg overflow-hidden;
+                    @apply relative bg-gray-900/5 dark:bg-white/5 rounded-lg;
                     min-height: 2rem;
 
                     .loading-block {
@@ -152,11 +148,11 @@
                     }
 
                     .scribble-block-content {
-                        @apply transition overflow-hidden relative;
+                        @apply transition relative overflow-hidden;
                     }
 
                     .scribble-block-actions {
-                        @apply transition opacity-0 absolute top-0 right-0 p-2 flex items-center pointer-events-none;
+                        @apply transition opacity-0 absolute top-0 right-full flex items-center pointer-events-none;
                         z-index: 1;
 
                         .scribble-block-action {
@@ -415,7 +411,10 @@
     @apply dark:bg-gray-900 min-h-72
 }
 .custom-editor .scribble-wrapper .scribble-editor-wrapper .scribble-editor .tiptap {
-    @apply p-4 px-6
+    @apply p-4
+}
+.custom-editor .scribble-wrapper .scribble-editor-wrapper .scribble-editor .tiptap > * {
+    @apply px-4
 }
 .scribble-wrapper .scribble-editor-wrapper a {
     @apply dark:text-primary-400 text-primary-600
@@ -435,7 +434,7 @@
     }
 }
 .tippy-box[data-theme*="scribble-"] {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-800 shadow-[0_0px_20px_0px_rgba(0,0,0,0.3)] dark:shadow-[0_0px_20px_0px_rgba(0,0,0,0.4)];
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-800 shadow-[0_0px_20px_0px_rgba(0,0,0,0.2)] dark:shadow-[0_0px_20px_0px_rgba(0,0,0,0.4)];
 }
 .scribble-suggestions,
 .scribble-merge-tags {
@@ -489,4 +488,29 @@
 }
 .ProseMirror-gapcursor:after {
     @apply dark:!border-white/50 !border-black/30
+}
+.tippy-box[data-theme="scribble-options"] {
+    @apply p-2 rounded-lg;
+
+    .svelte-options-menu{
+
+        @apply grid grid-cols-1 min-w-48;
+
+        button {
+            @apply text-gray-600 dark:text-gray-400 py-1 px-2 flex text-left items-center rounded-md hover:bg-black/5 dark:hover:bg-white/5;
+
+            svg {
+                @apply mr-2;
+            }
+
+        }
+        button.delete{
+            @apply text-red-800 dark:text-red-600
+        }
+
+    }
+
+    .tippy-content {
+        @apply p-0;
+    }
 }

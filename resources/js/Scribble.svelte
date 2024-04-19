@@ -29,6 +29,7 @@
     import Toolbar from './components/Toolbar.svelte'
     import {Highlight} from "@tiptap/extension-highlight";
     import LinkCustom from "./extensions/LinkCustom.js";
+    import Embed from "./extensions/Embed.js";
 
     let editor;
     let element;
@@ -55,6 +56,7 @@
             IdExtension,
             Grid,
             LinkCustom,
+            Embed,
             Highlight,
             GridColumn,
             Details,

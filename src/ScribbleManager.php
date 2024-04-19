@@ -90,7 +90,8 @@ class ScribbleManager extends Component
             Tools\Notice::make(),
             Tools\Highlight::make(),
             Tools\MediaLibraryImage::make(),
-            Tools\MediaLibraryGallery::make()
+            Tools\MediaLibraryGallery::make(),
+            Tools\Embed::make()
         ];
     }
 

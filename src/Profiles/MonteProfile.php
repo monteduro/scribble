@@ -36,13 +36,14 @@ class MonteProfile extends ScribbleProfile
         return app(ScribbleManager::class)->getTools([
             'media-library-image',
             'media-library-gallery',
-            'notice',
+            'embed',
             'heading-one',
             'heading-three',
             'blockquote',
             'bullet-list',
             'ordered-list',
             'grid',
+            'notice',
             'horizontal-rule',
         ])->toArray();
     }
