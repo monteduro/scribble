@@ -2,6 +2,7 @@
 
 namespace Awcodes\Scribble;
 
+use Awcodes\Scribble\Tiptap\Nodes\Script;
 use Closure;
 use Filament\Support\Components\Component;
 use Illuminate\Support\Arr;
@@ -91,7 +92,9 @@ class ScribbleManager extends Component
             Tools\Highlight::make(),
             Tools\MediaLibraryImage::make(),
             Tools\MediaLibraryGallery::make(),
-            Tools\Embed::make()
+            Tools\Embed::make(),
+            Tools\iFrame::make(),
+            Tools\Script::make(),
         ];
     }
 

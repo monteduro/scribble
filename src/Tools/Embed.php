@@ -4,6 +4,7 @@ namespace Awcodes\Scribble\Tools;
 use Awcodes\Scribble\ScribbleTool;
 use Awcodes\Scribble\Enums\ToolType;
 use Awcodes\Scribble\Modals\EmbedForm;
+use Awcodes\Scribble\Tiptap\Nodes\Embed as NodesEmbed;
 use Closure;
 
 class Embed extends ScribbleTool
@@ -20,6 +21,7 @@ class Embed extends ScribbleTool
             ->label('Embed')
             ->type(ToolType::Block)
             ->optionsModal(EmbedForm::class)
+            ->converterExtensions(new NodesEmbed())
             ->renderedView('scribble::tools.embed');
     }
 }

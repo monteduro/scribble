@@ -48,6 +48,16 @@ class LinkCustom extends BaseLink
 
             }
 
+        }elseif ( isset( $HTMLAttributes["href"] ) ) {
+
+            // Controllo se l'url è valido, altrimenti lo epuro dalla pagina (il metodo gestisce anche i redirect, nel caso)
+            $HTMLAttributes["href"] = \ExternalUrlChecker::checkUrl($HTMLAttributes["href"], 'links');
+
+            if ( !$HTMLAttributes["href"] ) {
+                return [
+                    'span'
+                ];
+            }
 
         }
 

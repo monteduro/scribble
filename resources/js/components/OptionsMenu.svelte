@@ -8,6 +8,11 @@
     export let editor
     export let onClose;
 
+    // Attributi booleani per rendere opzionali i tasti
+    export let showSettings = true;
+    export let showDuplicate = true;
+    export let showRemove = true;
+
     const handleDuplicate = () => {
 
         const { tr, doc } = editor.state;
@@ -63,7 +68,13 @@
 </script>
 
 <div class="svelte-options-menu">
-    <BlockSettings {handleOpen} />
-    <DuplicateBlock {handleDuplicate} />
-    <RemoveBlock {handleRemove} />
+    {#if showSettings}
+        <BlockSettings {handleOpen} />
+    {/if}
+    {#if showDuplicate}
+        <DuplicateBlock {handleDuplicate} />
+    {/if}
+    {#if showRemove}
+        <RemoveBlock {handleRemove} />
+    {/if}
 </div>

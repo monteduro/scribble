@@ -63,7 +63,6 @@ class MonteProfile extends ScribbleProfile
             'superscript',
             'divider',
             'link',
-            'media',
             'bullet-list',
             'ordered-list',
             'details',

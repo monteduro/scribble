@@ -6,6 +6,7 @@ use App\Models\Content;
 use App\Models\Movie;
 use App\Models\Podcast;
 use App\Models\TVShow;
+use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\Actions;
 use Filament\Forms\Components\Actions\Action;
@@ -22,6 +23,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Support\Enums\MaxWidth;
+use Illuminate\Support\Facades\DB;
 
 class LinkCustomModal extends ScribbleModal
 {
@@ -70,12 +72,23 @@ class LinkCustomModal extends ScribbleModal
                                 ->schema([
                                     TextInput::make('href')
                                         ->label('')
-                                        ->afterStateUpdated(function (Set $set, $state) {
+                                        ->afterStateUpdated(function (Set $set, $state, TextInput $component) {
                                             if ( $state ) {
+                                                // Annullo i campi del link interno
                                                 $set('title', '');
                                                 $set('model_id', null);
                                             }
                                         })
+                                        ->rules([
+                                            fn (): Closure => function (string $attribute, $value, Closure $fail) {
+
+                                                $check_url = \ExternalUrlChecker::checkUrl($value, 'links');
+
+                                                if ( !$check_url ) {
+                                                    $fail("L'url che hai inserito non è valido. Presenta un errore di stato HTTP. Fai un controllo approfondito");
+                                                }
+                                            },
+                                        ])
                                         ->reactive()
                                         ->placeholder('Inserisci url esterna...')
                                         ->requiredWithout('model_id')

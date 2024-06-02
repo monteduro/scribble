@@ -14,11 +14,10 @@ class Media extends ScribbleTool
         $this
             ->icon('scribble-media')
             ->label('Media')
-            ->type(ToolType::Modal)
+            ->type(ToolType::Block)
             ->commands([
                 $this->makeCommand(command: 'setMedia'),
             ])
-            ->optionsModal(MediaModal::class)
             ->converterExtensions(new ImageExtension());
     }
 }

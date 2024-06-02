@@ -58,7 +58,7 @@
 
     $: getView = () => {
         const component = document.querySelector('#scribble-renderer').getAttribute('wire:id')
-
+        console.log(node.attrs.values);
         window.Livewire
             .find(component)
             .call('getView', node.attrs.identifier, node.attrs.values)
