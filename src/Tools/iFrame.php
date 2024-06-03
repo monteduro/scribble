@@ -18,7 +18,9 @@ class iFrame extends ScribbleTool
         $this
             ->icon('heroicon-o-code-bracket')
             ->label('iFrame')
+            ->extension('iframe')
             ->type(ToolType::Block)
+            ->renderedView('scribble::tools.iframe')
             ->converterExtensions(new NodesIframe());
     }
 }

@@ -19,6 +19,7 @@ class MonteProfile extends ScribbleProfile
             'highlight',
             'link',
             'italic',
+            'code',
             'strike',
             'divider',
             'blockquote',

@@ -30,7 +30,8 @@
     import {Highlight} from "@tiptap/extension-highlight";
     import LinkCustom from "./extensions/LinkCustom.js";
     import Embed from "./extensions/Embed.js";
-    import iframe from "./extensions/iframe.js";
+    import oEmbedExtension from "./extensions/oEmbedExtension.js";
+    import oEmbed from "./extensions/oEmbed.js";
 
     let editor;
     let element;
@@ -59,7 +60,7 @@
             LinkCustom,
             Embed,
             Highlight,
-            iframe,
+            oEmbedExtension,
             GridColumn,
             Details,
             DetailsContent,
@@ -67,6 +68,7 @@
             ScribbleBlock,
             Subscript,
             Superscript,
+            oEmbed,
             MediaExtension,
             Underline,
             TextAlign.configure({

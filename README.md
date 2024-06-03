@@ -628,7 +628,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 # Abbiare git dopo composer update
 git init
-git add origin https://github.com/monteduro/scribble.git
+git remote add origin https://github.com/monteduro/scribble.git
 
 ## BUILDARE JS
 cd  vendor/awcodes/scribble/
