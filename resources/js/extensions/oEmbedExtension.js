@@ -25,6 +25,7 @@ export default Extension.create({
             const match = urlRegex.exec(text);
 
             if (match) {
+                const { from, to } = view.state.selection;
               // Prevent the default behavior
               event.preventDefault();
 
@@ -47,10 +48,23 @@ export default Extension.create({
 
                   if (data.isValid) {
 
-                   // Usiamo il dispatcher del view per richiamare il comando
-                   view.dispatch(view.state.tr.replaceSelectionWith(
-                     view.state.schema.nodes.scribbleBlock.createAndFill({ identifier: 'embed', values: { url: url } }) // Assumendo che "oEmbed" sia il tipo di nodo definito nel tuo schema
-                   ));
+                    if (data.type === 'embed') {
+                        // Creiamo un nodo "oEmbed" con l'attributo "url" aggiunto
+                        const node = view.state.schema.nodes.scribbleBlock.create({
+                            identifier: 'embed',
+                            values: { url: url }
+                        });
+
+                        // Usiamo il dispatcher del view per richiamare il comando
+                        view.dispatch(view.state.tr.replaceSelectionWith(node));
+                    } else {
+                        const { from, to } = view.state.selection;
+                        const schema = view.state.schema; // Otteniamo lo schema dall'oggetto view
+                        const linkMark = schema.marks.link.create({ href: url });
+                        const tr = view.state.tr.replaceWith(from, to, schema.text(url, [linkMark]));
+
+                        view.dispatch(tr);
+                    }
 
                     console.log('Block inserted successfully with fetch data');
                   } else {
