@@ -5,7 +5,10 @@ namespace Awcodes\Scribble\Livewire;
 use App\Models\Content;
 use App\Models\Movie;
 use App\Models\Podcast;
+use App\Models\PodcastEpisode;
+use App\Models\Topic;
 use App\Models\TVShow;
+use App\Services\SearchString;
 use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\Actions;
@@ -44,6 +47,7 @@ class LinkCustomModal extends ScribbleModal
                                 ->schema([
                                     Select::make('model_type')
                                         ->reactive()
+                                        ->label('')
                                         ->placeholder('Seleziona il tipo di contenuto che vuoi linkare...')
                                         ->afterStateUpdated(function (Set $set) {
                                             $set('model_id', null);
@@ -52,7 +56,9 @@ class LinkCustomModal extends ScribbleModal
                                             Content::class => 'Contenuto',
                                             Movie::class => 'Film',
                                             TVShow::class => 'TV Show',
-                                            Podcast::class => 'Podcast'
+                                            Podcast::class => 'Podcast',
+                                            PodcastEpisode::class => 'Podcast - Episodio',
+                                            Topic::class => 'Argomento'
                                         ]),
                                     Select::make('model_id')
                                         ->label('')
@@ -60,12 +66,21 @@ class LinkCustomModal extends ScribbleModal
                                         ->reactive()
                                         ->afterStateUpdated(function (Set $set, Get $get, $state) {
                                             if ( $state ) {
-                                                $set('title', $get('model_type')::where('id', $state)->first()->title);
+                                                $field = $get('model_type') == PodcastEpisode::class || $get('model_type') == Podcast::class || $get('model_type') == Topic::class ? 'name' : 'title';
+                                                $set('title', $get('model_type')::where('id', $state)->first()->{$field});
                                                 $set('href', null);
                                             }
                                         })
                                         ->placeholder('Cerca e linka un contenuto del sito...')
-                                        ->getSearchResultsUsing(fn (string $search, Get $get): array => $get('model_type')::where('title', 'like', "%{$search}%")->limit(3)->pluck('title', 'id')->toArray())
+                                        ->getOptionLabelUsing(function ($value , Get $get) {
+                                            $field = $get('model_type') == PodcastEpisode::class || $get('model_type') == Podcast::class || $get('model_type') == Topic::class ? 'name' : 'title';
+                                            return $get('model_type')::find($value)?->{$field};
+                                        })
+                                        ->getSearchResultsUsing(function (string $search, Get $get): array {
+                                            list($search_filter, $search_numbers) = SearchString::fullText($search);
+                                            $field = $get('model_type') == PodcastEpisode::class || $get('model_type') == Podcast::class || $get('model_type') == Topic::class ? 'name' : 'title';
+                                            return $get('model_type')::applyFilters([], [], $search_filter, $search_numbers)->limit(50)->pluck($field, 'id')->toArray();
+                                        })
                                         ->searchable(),
                                 ]),
                             Tab::make('Link esterno')

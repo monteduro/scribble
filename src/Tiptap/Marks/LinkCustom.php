@@ -29,24 +29,27 @@ class LinkCustom extends BaseLink
         ## @TODO gestire bene questa parte con slug generati con qualche service o facade
         if ( isset($HTMLAttributes["model_type"]) && isset($HTMLAttributes["model_id"]) ) {
 
-            switch ($HTMLAttributes["model_type"]) {
+            $content = $HTMLAttributes["model_type"]::withoutGlobalScopes()->find($HTMLAttributes["model_id"]);
+            $HTMLAttributes["href"]  = route($HTMLAttributes["model_type"]::$routeName, $content->route_params);
 
-                case Content::class:
-                    $content = Content::find($HTMLAttributes["model_id"]);
-                    $HTMLAttributes["href"] = '/'.$content->section->slug.'/'.$content->slug;
-                    break;
+            // switch ($HTMLAttributes["model_type"]) {
 
-                case Movie::class:
-                    $content = Movie::find($HTMLAttributes["model_id"]);
-                    $HTMLAttributes["href"] = '/film/'.$content->id;
-                    break;
+            //     case Content::class:
+            //         $content = Content::find($HTMLAttributes["model_id"]);
+            //         $HTMLAttributes["href"] = '/'.$content->section->slug.'/'.$content->slug;
+            //         break;
 
-                case TVShow::class:
-                    $content = TVShow::find($HTMLAttributes["model_id"]);
-                    $HTMLAttributes["href"] = '/tv/'.$content->id;
-                    break;
+            //     case Movie::class:
+            //         $content = Movie::find($HTMLAttributes["model_id"]);
+            //         $HTMLAttributes["href"] = '/film/'.$content->id;
+            //         break;
 
-            }
+            //     case TVShow::class:
+            //         $content = TVShow::find($HTMLAttributes["model_id"]);
+            //         $HTMLAttributes["href"] = '/tv/'.$content->id;
+            //         break;
+
+            // }
 
         }elseif ( isset( $HTMLAttributes["href"] ) ) {
 

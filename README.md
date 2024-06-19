@@ -632,4 +632,5 @@ git remote add origin https://github.com/monteduro/scribble.git
 
 ## BUILDARE JS
 cd  vendor/awcodes/scribble/
+npm install
 node bin/build.js --dev     

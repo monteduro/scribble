@@ -3,16 +3,11 @@ namespace Awcodes\Scribble\Modals;
 
 use Awcodes\Scribble\Enums\SlideDirection;
 use Awcodes\Scribble\Livewire\ScribbleModal;
-use Awcodes\Scribble\Profiles\MinimalProfile;
-use Awcodes\Scribble\ScribbleEditor;
-use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 
 class EmbedForm extends ScribbleModal
 {
-    public ?string $header = 'Embed';
-
-    public static ?SlideDirection $slideDirection = SlideDirection::Right;
+    public ?string $header = 'Incorporamento';
 
     // this should match the identifier in the tool class
     public ?string $identifier = 'embed';
@@ -20,15 +15,16 @@ class EmbedForm extends ScribbleModal
     public function mount(): void
     {
         $this->form->fill([
-            'embed' => $this->data['embed'] ?? null
+            'url' => $this->data['url'] ?? null
         ]);
     }
 
     public function getFormFields(): array
     {
         return [
-            Textarea::make('embed')
-                ->label('Codice di embed')
+            TextInput::make('url')
+                ->url()
+                ->label('URL da incorporare')
         ];
     }
 }
